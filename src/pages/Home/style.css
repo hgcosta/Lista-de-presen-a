@@ -1,0 +1,25 @@
+input{
+    padding: .4rem 1rem;
+    border:solid 1px #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 300px;
+}
+button{
+    padding: .4rem 1rem;
+    margin-left: 1rem;
+    background-color: blueviolet;
+    color: #fff;
+    border: 1px solid blueviolet;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+    color: blueviolet;
+    margin: 1rem 0;
+    margin: 84px 0 24px 0;
+}

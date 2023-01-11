@@ -1,11 +1,11 @@
 import './style.css';
 
-export function Card(){
+export function Card({name, time}){
     return(
-        <div class="container">
+        <div className='container'>
             <div className='card'>
-                <strong>Hugo Havoc</strong>
-                <small>10:15:24</small>
+                <p>{name}</p>
+                <small>{time}</small>
             </div>
 
         </div>

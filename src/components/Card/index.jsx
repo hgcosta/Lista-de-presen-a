@@ -2,7 +2,7 @@ import './style.css';
 
 export function Card({name, time}){
     return(
-        <div className='container'>
+        <div className='container container-card'>
             <div className='card'>
                 <strong>{name}</strong>
                 <small>{time}</small>

@@ -15,10 +15,13 @@ function App() {
         hour:'2-digit',
         minute:'2-digit',
         second:'2-digit',
-      })
+      }),
+      id: Math.random(),
     }
     console.log(newStudent);
-    setStudents([newStudent]);
+    setStudents(prevState=>[...prevState, newStudent]);
+    const inputNome = document.querySelector('#inputNome');
+    inputNome.value = '';
   }
 
 
@@ -26,8 +29,14 @@ function App() {
    
     <>
       <div className="container">
-        <h1>Lista de presença</h1>
-        <input type="text" onChange={e=> setStudantName(e.target.value)} placeholder="Digite o Nome" />
+        <header>
+          <h1>Lista de presença</h1>
+          <div className='header-perfil'>
+            <img src="https://github.com/hgcosta.png" alt="" />
+            <strong>Hugo</strong>
+          </div>
+        </header>
+        <input type="text" id="inputNome" onChange={e=> setStudantName(e.target.value)} placeholder="Digite o Nome" />
         <button type="button" onClick={handleAddStudent} >Adicionar</button>
       </div>
       {

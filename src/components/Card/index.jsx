@@ -4,10 +4,9 @@ export function Card({name, time}){
     return(
         <div className='container'>
             <div className='card'>
-                <p>{name}</p>
+                <strong>{name}</strong>
                 <small>{time}</small>
             </div>
-
         </div>
     )
 }

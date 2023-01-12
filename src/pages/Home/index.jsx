@@ -1,13 +1,14 @@
 import './style.css';
 import {Card} from '../../components/Card';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 
 function App() {
 
   const [studentName, setStudantName] = useState();
   const [students, setStudents] = useState([]);
- 
+  const [user,setUser] = useState({name:'', avatar:''});
+
   function handleAddStudent(){
     const newStudent = {
       name:studentName,
@@ -24,6 +25,13 @@ function App() {
     inputNome.value = '';
   }
 
+  useEffect(()=>{
+    fetch("https://api.github.com/users/hgcosta")
+    .then(response => response.json())
+    .then(data => {
+      setUser({name:data.name, avatar:data.avatar_url})
+    })
+  }, []);
 
   return (
    
@@ -32,8 +40,8 @@ function App() {
         <header>
           <h1>Lista de presença</h1>
           <div className='header-perfil'>
-            <img src="https://github.com/hgcosta.png" alt="" />
-            <strong>Hugo</strong>
+            <img src={user.avatar} alt="" />
+            <strong>{user.name}</strong>
           </div>
         </header>
         <input type="text" id="inputNome" onChange={e=> setStudantName(e.target.value)} placeholder="Digite o Nome" />
